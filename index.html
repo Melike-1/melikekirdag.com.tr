@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Melike Kırdağ — Personal Space</title>
+
+  <meta
+    name="description"
+    content="Melike Kırdağ'ın kişisel web sitesi. Dijital çalışmalar, projeler ve fikirler."
+  >
+
+  <meta name="theme-color" content="#fafaf8">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    :root {
+      --bg: #fafaf8;
+      --white: #ffffff;
+      --black: #181817;
+      --gray: #747470;
+      --light-gray: #a5a5a0;
+      --border: #e8e8e3;
+      --soft: #f2f2ee;
+      --green: #7d8878;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--black);
+
+      font-family: "DM Sans", sans-serif;
+
+      line-height: 1.6;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1140px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+
+      z-index: 1000;
+
+      background: rgba(250, 250, 248, 0.82);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(232, 232, 227, 0.7);
+    }
+
+    nav {
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 700;
+
+      letter-spacing: -0.04em;
+    }
+
+    .logo span {
+      color: var(--light-gray);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+
+      list-style: none;
+
+      color: var(--gray);
+
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--black);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 130px 0 100px;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 300px;
+
+      align-items: center;
+
+      gap: 80px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 28px;
+
+      color: var(--gray);
+
+      font-size: 12px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.13em;
+    }
+
+    .status {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      box-shadow: 0 0 0 5px #edf0eb;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+
+      font-size: clamp(55px, 8vw, 94px);
+
+      line-height: 0.97;
+
+      letter-spacing: -0.075em;
+
+      font-weight: 600;
+    }
+
+    .hero h1 .serif {
+      font-family: "Playfair Display", serif;
+
+      font-style: italic;
+
+      font-weight: 500;
+
+      letter-spacing: -0.055em;
+    }
+
+    .hero-description {
+      max-width: 580px;
+
+      margin-top: 32px;
+
+      color: var(--gray);
+
+      font-size: 16px;
+
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 10px;
+
+      margin-top: 36px;
+    }
+
+    .button {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 46px;
+
+      padding: 0 20px;
+
+      border-radius: 10px;
+
+      font-size: 13px;
+
+      font-weight: 500;
+
+      transition: all 0.25s ease;
+    }
+
+    .button-dark {
+      background: var(--black);
+
+      color: white;
+    }
+
+    .button-dark:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.13);
+    }
+
+    .button-light {
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      color: var(--black);
+    }
+
+    .button-light:hover {
+      transform: translateY(-2px);
+
+      border-color: #d2d2cc;
+    }
+
+
+    /* =========================
+       PROFILE CARD
+    ========================= */
+
+    .profile-card {
+      position: relative;
+
+      width: 260px;
+      height: 320px;
+
+      margin-left: auto;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 25px 70px rgba(30, 30, 20, 0.05);
+    }
+
+    .profile-circle {
+      width: 170px;
+      height: 170px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 35% 30%,
+          #ffffff 0%,
+          #eeeeea 50%,
+          #dcdcd6 100%
+        );
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profile-initial {
+      font-family: "Playfair Display", serif;
+
+      font-size: 62px;
+
+      font-style: italic;
+
+      color: #999994;
+    }
+
+    .profile-label {
+      position: absolute;
+
+      bottom: 20px;
+      left: 20px;
+
+      color: var(--light-gray);
+
+      font-size: 10px;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.14em;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 120px 0;
+    }
+
+    .section-border {
+      border-top: 1px solid var(--border);
+    }
+
+    .section-meta {
+      margin-bottom: 18px;
+
+      color: var(--light-gray);
+
+      font-size: 11px;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 700px;
+
+      font-size: clamp(38px, 5vw, 58px);
+
+      line-height: 1;
+
+      letter-spacing: -0.065em;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
+      gap: 100px;
+
+      margin-top: 60px;
+    }
+
+    .about-intro {
+      color: var(--gray);
+
+      font-size: 16px;
+
+      line-height: 1.9;
+    }
+
+    .about-intro p + p {
+      margin-top: 22px;
+    }
+
+    .about-highlight {
+      padding: 30px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+    }
+
+    .about-highlight span {
+      display: block;
+
+      margin-bottom: 10px;
+
+      color: var(--light-gray);
+
+      font-size: 11px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .about-highlight strong {
+      font-size: 20px;
+
+      letter-spacing: -0.035em;
+
+      font-weight: 500;
+    }
+
+
+    /* =========================
+       VALUES
+    ========================= */
+
+    .values {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 55px;
+    }
+
+    .value {
+      padding: 30px;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+    }
+
+    .value-number {
+      color: #b0b0ab;
+
+      font-size: 11px;
+    }
+
+    .value h3 {
+      margin-top: 40px;
+
+      font-size: 20px;
+
+      letter-spacing: -0.035em;
+    }
+
+    .value p {
+      margin-top: 9px;
+
+      color: var(--gray);
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 16px;
+
+      margin-top: 55px;
+    }
+
+    .project {
+      position: relative;
+
+      min-height: 350px;
+
+      padding: 30px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+
+      background: var(--white);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 25px 70px rgba(30, 30, 20, 0.07);
+    }
+
+    .project-number {
+      color: #a5a5a0;
+
+      font-size: 10px;
+
+      letter-spacing: 0.13em;
+    }
+
+    .project h3 {
+      margin-top: 28px;
+
+      font-size: 26px;
+
+      letter-spacing: -0.045em;
+    }
+
+    .project p {
+      max-width: 440px;
+
+      margin-top: 10px;
+
+      color: var(--gray);
+
+      font-size: 13px;
+
+      line-height: 1.75;
+    }
+
+    .project-bottom {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-type {
+      color: #999994;
+
+      font-size: 10px;
+
+      letter-spacing: 0.12em;
+    }
+
+    .project-arrow {
+      width: 36px;
+      height: 36px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border);
+
+      border-radius: 50%;
+
+      font-size: 14px;
+
+      transition: all 0.25s ease;
+    }
+
+    .project:hover .project-arrow {
+      background: var(--black);
+
+      color: white;
+
+      border-color: var(--black);
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      padding-bottom: 130px;
+    }
+
+    .contact-box {
+      position: relative;
+
+      padding: 90px 40px;
+
+      text-align: center;
+
+      background: #f0f0ec;
+
+      border-radius: 25px;
+
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      top: -230px;
+      left: -100px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.65);
+    }
+
+    .contact-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 300px;
+      height: 300px;
+
+      right: -130px;
+      bottom: -210px;
+
+      border-radius: 50%;
+
+      background: rgba(255,255,255,0.55);
+    }
+
+    .contact-content {
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(38px, 6vw, 68px);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.07em;
+    }
+
+    .contact-box p {
+      max-width: 480px;
+
+      margin: 22px auto 30px;
+
+      color: var(--gray);
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 28px 0;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      color: #999994;
+
+      font-size: 11px;
+    }
+
+    .footer-right {
+      display: flex;
+
+      gap: 20px;
+    }
+
+    .footer-right a:hover {
+      color: var(--black);
+    }
+
+
+    /* =========================
+       ANIMATION
+    ========================= */
+
+    .fade {
+      opacity: 0;
+
+      transform: translateY(18px);
+
+      animation:
+        fadeUp 0.8s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+
+        transform: translateY(0);
+      }
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .container {
+        width: min(100% - 28px, 1140px);
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+      }
+
+      .profile-card {
+        margin-left: 0;
+
+        width: 100%;
+        height: 260px;
+      }
+
+      .profile-circle {
+        width: 145px;
+        height: 145px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 85px 0;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .nav-links {
+        gap: 15px;
+
+        font-size: 11px;
+      }
+
+      .nav-links li:nth-child(2) {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+
+        gap: 15px;
+      }
+
+      .contact-box {
+        padding: 65px 20px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a href="#" class="logo">
+          melike<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="#about">Hakkımda</a>
+          </li>
+
+          <li>
+            <a href="#projects">Projeler</a>
+          </li>
+
+          <li>
+            <a href="#contact">İletişim</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-grid">
+
+
+          <div>
+
+            <div class="eyebrow fade">
+              <span class="status"></span>
+              Personal space · 2026
+            </div>
+
+
+            <h1 class="fade delay-1">
+
+              Merhaba,
+              <br>
+
+              ben Melike.
+
+              <br>
+
+              <span class="serif">
+                Üretiyorum.
+              </span>
+
+            </h1>
+
+
+            <p class="hero-description fade delay-2">
+
+              Dijital dünyayı keşfetmeyi, yeni şeyler öğrenmeyi
+              ve fikirleri sade deneyimlere dönüştürmeyi seviyorum.
+              Burası çalışmalarımı ve yolculuğumu paylaştığım
+              kişisel alanım.
+
+            </p>
+
+
+            <div class="hero-actions fade delay-3">
+
+              <a
+                href="#projects"
+                class="button button-dark"
+              >
+                Çalışmalarım
+              </a>
+
+              <a
+                href="#contact"
+                class="button button-light"
+              >
+                İletişim
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <!-- PROFILE -->
+
+          <div class="profile-card fade delay-2">
+
+            <div class="profile-circle">
+
+              <span class="profile-initial">
+                M
+              </span>
+
+            </div>
+
+            <span class="profile-label">
+              Melike Kırdağ
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section
+      class="section-border"
+      id="about"
+    >
+
+      <div class="container">
+
+        <div class="section-meta">
+          01 — About
+        </div>
+
+        <h2 class="section-title">
+          Merak etmek,
+          <br>
+          üretmenin başlangıcı.
+        </h2>
+
+
+        <div class="about-grid">
+
+
+          <div class="about-intro">
+
+            <p>
+              Teknoloji, tasarım ve dijital üretim alanlarına
+              ilgi duyuyorum. Öğrenmenin sürekli devam eden
+              bir süreç olduğuna inanıyorum.
+            </p>
+
+            <p>
+              Yeni fikirleri araştırmayı, farklı şeyler
+              denemeyi ve öğrendiklerimi gerçek projelere
+              dönüştürmeyi seviyorum.
+            </p>
+
+          </div>
+
+
+          <div class="about-highlight">
+
+            <span>
+              Currently exploring
+            </span>
+
+            <strong>
+              Web · Design · Technology · Ideas
+            </strong>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         VALUES
+    ========================= -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-meta">
+          02 — Approach
+        </div>
+
+        <h2 class="section-title">
+          Basit tut.
+          <br>
+          İyi yap.
+        </h2>
+
+
+        <div class="values">
+
+
+          <div class="value">
+
+            <div class="value-number">
+              01
+            </div>
+
+            <h3>
+              Merak
+            </h3>
+
+            <p>
+              Yeni teknolojileri, fikirleri ve farklı
+              bakış açılarını keşfetmek.
+            </p>
+
+          </div>
+
+
+          <div class="value">
+
+            <div class="value-number">
+              02
+            </div>
+
+            <h3>
+              Sadelik
+            </h3>
+
+            <p>
+              Gereksiz detaylardan uzak, anlaşılır
+              ve temiz deneyimler oluşturmak.
+            </p>
+
+          </div>
+
+
+          <div class="value">
+
+            <div class="value-number">
+              03
+            </div>
+
+            <h3>
+              Üretim
+            </h3>
+
+            <p>
+              Fikirleri sadece düşünmek yerine onları
+              somut projelere dönüştürmek.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section
+      class="section-border"
+      id="projects"
+    >
+
+      <div class="container">
+
+        <div class="section-meta">
+          03 — Selected work
+        </div>
+
+        <h2 class="section-title">
+          Birkaç şey
+          <br>
+          üzerinde çalışıyorum.
+        </h2>
+
+
+        <div class="projects">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="project">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 01
+              </div>
+
+              <h3>
+                Personal Website
+              </h3>
+
+              <p>
+                Kişisel alan, çalışmalar ve dijital
+                deneyimler için oluşturulan minimal
+                web sitesi.
+              </p>
+
+            </div>
+
+
+            <div class="project-bottom">
+
+              <span class="project-type">
+                WEB · DESIGN
+              </span>
+
+              <a
+                href="#"
+                class="project-arrow"
+                aria-label="Projeyi görüntüle"
+              >
+                ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 02
+              </div>
+
+              <h3>
+                Creative Experiment
+              </h3>
+
+              <p>
+                Tasarım, kod ve fikirleri bir araya
+                getiren kişisel bir deney alanı.
+              </p>
+
+            </div>
+
+
+            <div class="project-bottom">
+
+              <span class="project-type">
+                EXPERIMENT · CODE
+              </span>
+
+              <a
+                href="#"
+                class="project-arrow"
+                aria-label="Projeyi görüntüle"
+              >
+                ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 03
+              </div>
+
+              <h3>
+                Digital Notes
+              </h3>
+
+              <p>
+                Öğrenilenleri, fikirleri ve küçük
+                deneyleri bir araya getiren dijital
+                bir çalışma alanı.
+              </p>
+
+            </div>
+
+
+            <div class="project-bottom">
+
+              <span class="project-type">
+                NOTES · IDEAS
+              </span>
+
+              <a
+                href="#"
+                class="project-arrow"
+                aria-label="Projeyi görüntüle"
+              >
+                ↗
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 04 -->
+
+          <article class="project">
+
+            <div>
+
+              <div class="project-number">
+                PROJECT / 04
+              </div>
+
+              <h3>
+                More to come.
+              </h3>
+
+              <p>
+                Yeni fikirler, yeni deneyler ve henüz
+                keşfedilmemiş projeler.
+              </p>
+
+            </div>
+
+
+            <div class="project-bottom">
+
+              <span class="project-type">
+                IN PROGRESS
+              </span>
+
+              <span class="project-arrow">
+                +
+              </span>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="contact-content">
+
+            <h2>
+              Bir şeyler
+              <br>
+              üretelim.
+            </h2>
+
+            <p>
+              Bir fikir, proje veya sadece bir merhaba
+              için bana ulaşabilirsin.
+            </p>
+
+            <!-- Buradaki e-posta adresini kendi adresinle değiştir -->
+            <a
+              href="mailto:hello@melikekirdag.com.tr"
+              class="button button-dark"
+            >
+              E-posta Gönder
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-inner">
+
+        <span>
+          © 2026 Melike Kırdağ
+        </span>
+
+        <div class="footer-right">
+
+          <!-- Linklerin URL'lerini daha sonra ekleyebilirsin -->
+
+          <a href="#" aria-label="GitHub">
+            GitHub
+          </a>
+
+          <a href="#" aria-label="LinkedIn">
+            LinkedIn
+          </a>
+
+          <a href="#" aria-label="Instagram">
+            Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
